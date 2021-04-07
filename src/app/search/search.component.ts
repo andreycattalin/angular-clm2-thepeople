@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDateRangePicker } from '@angular/material/datepicker';
 import { Person } from '../models/person.model';
 
 @Component({
@@ -15,6 +16,14 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.loadData() // TODO API
+  }
+
+  startChange(event: any) {
+    console.log(event.value)
+  }
+
+  endChange(event: any) {
+    console.log(event.value)
   }
 
   loadData() {

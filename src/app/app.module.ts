@@ -10,9 +10,13 @@ import { SearchComponent } from './search/search.component';
 import { DetailComponent } from './detail/detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UploadNewComponent } from './upload-new/upload-new.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
-  declarations: [							
+  declarations: [
     AppComponent,
       MenuComponent,
       FooterComponent,
@@ -24,7 +28,11 @@ import { UploadNewComponent } from './upload-new/upload-new.component';
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
