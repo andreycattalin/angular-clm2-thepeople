@@ -10,10 +10,10 @@
 
             <div class="col-6">
                 <mat-form-field appearance="fill">
-                    <mat-label>Enter a date range</mat-label>
+                    <mat-label>Introduce un rango de fechas</mat-label>
                     <mat-date-range-input [rangePicker]="picker">
-                        <input matStartDate placeholder="Start date" (dateChange)="startChange($event)">
-                        <input matEndDate placeholder="End date" (dateChange)="endChange($event)">
+                        <input matStartDate placeholder="Fecha inicio" (dateChange)="startChange($event)">
+                        <input matEndDate placeholder="Fecha fin" (dateChange)="endChange($event)">
                     </mat-date-range-input>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-date-range-picker #picker></mat-date-range-picker>

@@ -13,7 +13,7 @@ import { UploadNewComponent } from './upload-new/upload-new.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatInputModule,
     MatNativeDateModule,
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'es-ES'},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
