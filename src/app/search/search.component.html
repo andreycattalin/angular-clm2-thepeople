@@ -12,7 +12,7 @@
 
     <div class="row">
         <div *ngFor="let person of allPeople" class="col-4 mt-4 card-box">
-            <a class="selection-card" href="">
+            <a class="selection-card" [routerLink]="['/detail/' + person.id ]">
                 <div class="img-card" [ngStyle]="{'background-image': 'url('+ person.photo + ')' }"></div>
                 <div class="white-card">
                     <h2>{{ person.name }}</h2>

@@ -9,7 +9,7 @@ import { UploadNewComponent } from './upload-new/upload-new.component';
 const routes: Routes = [
   { path: "", component: HomeComponent, pathMatch: "full" },
   { path: "search", component: SearchComponent },
-  { path: "detail", component: DetailComponent },
+  { path: "detail/:iduser", component: DetailComponent },
   { path: "upload", component: UploadNewComponent },
   { path: "404", component: NotFoundComponent },
   { path: "**", redirectTo: "/404" },
