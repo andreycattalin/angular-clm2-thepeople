@@ -9,16 +9,18 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { DetailComponent } from './detail/detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UploadNewComponent } from './upload-new/upload-new.component';
 
 @NgModule({
-  declarations: [						
+  declarations: [							
     AppComponent,
       MenuComponent,
       FooterComponent,
       HomeComponent,
       SearchComponent,
       DetailComponent,
-      NotFoundComponent
+      NotFoundComponent,
+      UploadNewComponent
    ],
   imports: [
     BrowserModule,
