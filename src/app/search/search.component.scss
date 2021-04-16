@@ -3,6 +3,7 @@
     border: 1px solid rgba(255, 255, 255, 0.431968);
     box-sizing: border-box;
     box-shadow: 0px 2px 6px rgba(103, 99, 139, 0.120674);
+    padding: 20px;
 }
 
 .card-box {
@@ -68,4 +69,8 @@
 
 .mat-form-field-flex {
     border-radius: 14px;
+}
+
+.inputwidth {
+    width: 100%;
 }

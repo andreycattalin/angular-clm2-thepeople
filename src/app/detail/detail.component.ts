@@ -10,6 +10,8 @@ export class DetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // Pilla de la URL el id
+    // Hacer peticion a API
   }
 
 }

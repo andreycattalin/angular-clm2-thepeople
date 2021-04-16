@@ -2,14 +2,17 @@
 
     <div class="container">
 
-        <div class="row">
+        <div class="row justify-content-center">
 
-            <div class="col-6">
-
+            <div class="col-4">
+                <mat-form-field appearance="fill" class="inputwidth">
+                    <mat-label>Buscar por nombre o apellido</mat-label>
+                    <input matInput>
+                </mat-form-field>
             </div>
 
-            <div class="col-6">
-                <mat-form-field appearance="fill">
+            <div class="col-4">
+                <mat-form-field appearance="fill" class="inputwidth">
                     <mat-label>Introduce un rango de fechas</mat-label>
                     <mat-date-range-input [rangePicker]="picker">
                         <input matStartDate placeholder="Fecha inicio" (dateChange)="startChange($event)">

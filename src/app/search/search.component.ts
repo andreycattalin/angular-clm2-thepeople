@@ -27,6 +27,7 @@ export class SearchComponent implements OnInit {
   }
 
   loadData() {
+    // Esta info vendrá de API
     this.allPeople.push(
       {
         "bio": "Cillum laborum aliquip officia magna do sunt est fugiat id incididunt. Magna laboris officia veniam cillum id exercitation adipisicing consectetur. Id deserunt aute dolor sint esse non esse exercitation aute officia aliqua quis excepteur labore. Incididunt mollit velit labore minim velit ad cupidatat labore adipisicing veniam.\r\n",
