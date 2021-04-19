@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDateRangePicker } from '@angular/material/datepicker';
+import { ActivatedRoute, Router } from '@angular/router';
+import * as moment from 'moment';
 import { Person } from '../models/person.model';
 
 @Component({
@@ -10,20 +11,34 @@ import { Person } from '../models/person.model';
 export class SearchComponent implements OnInit {
 
   allPeople: Array<Person> = []
+  searchName = ""
+  mStart = ""
+  mEnd = ""
 
-  constructor() {
+  constructor(private active: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
     this.loadData() // TODO API
+
+    this.active.queryParams.subscribe( params => {
+      if(params.name != undefined) {
+        this.searchName = params.name
+      }
+    })
   }
 
   startChange(event: any) {
-    console.log(event.value)
+    let myStart = moment(event.value).format("DD-MM-YYYY")
+    this.mStart = myStart
   }
 
   endChange(event: any) {
-    console.log(event.value)
+    if(event.value != null) {
+      let myEnd = moment(event.value).format("DD-MM-YYYY")
+      this.mEnd = myEnd
+    }
+    this.loadSearch()
   }
 
   loadData() {
@@ -128,4 +143,14 @@ export class SearchComponent implements OnInit {
     )
   }
 
+  updateSearch(event: any) {
+    this.searchName = event.target.value
+    this.loadSearch()
+  }
+
+  loadSearch() {
+    this.router.navigate(["/search"], {queryParams: { name: this.searchName, start: this.mStart, end: this.mEnd }})
+
+    // Atacamos a API por aqui
+  }
 }

@@ -7,7 +7,7 @@
             <div class="col-4">
                 <mat-form-field appearance="fill" class="inputwidth">
                     <mat-label>Buscar por nombre o apellido</mat-label>
-                    <input matInput>
+                    <input [value]="searchName" (keyup)="updateSearch($event)" matInput>
                 </mat-form-field>
             </div>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  bgWhite = true
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.router.events.subscribe( ruta => {
+      if(ruta instanceof NavigationEnd) {
+
+        if(ruta.url == "/") {
+          this.bgWhite = false
+        } else {
+          this.bgWhite = true
+        }
+
+      }
+    })
   }
 
 }
