@@ -14,9 +14,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [
+  declarations: [			
     AppComponent,
       MenuComponent,
       FooterComponent,
@@ -24,7 +27,10 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
       SearchComponent,
       DetailComponent,
       NotFoundComponent,
-      UploadNewComponent
+      UploadNewComponent,
+      LoginComponent,
+      RegisterComponent,
+      DashboardComponent
    ],
   imports: [
     BrowserModule,
