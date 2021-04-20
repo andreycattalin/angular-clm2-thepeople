@@ -19,6 +19,7 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AllPeopleComponent } from './dashboard/all-people/all-people.component';
 import { DetailPeopleComponent } from './dashboard/detail-people/detail-people.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,8 @@ import { DetailPeopleComponent } from './dashboard/detail-people/detail-people.c
     MatDatepickerModule,
     MatInputModule,
     MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'es-ES'},

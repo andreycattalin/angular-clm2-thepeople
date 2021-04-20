@@ -3,22 +3,31 @@
         <div class="col-12">
 
             <div class="row justify-content-center">
-                <div class="col-4 d-grid">
+                <form [formGroup]="mForm" (ngSubmit)="onSave()" class="col-4 d-grid">
                     <h1>Regístrate</h1>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput">
+                        <input type="text" class="form-control" id="floatingInput" formControlName="username" [ngClass]="{'is-invalid': f.username.errors && isSent}">
                         <label for="floatingInput">Nombre</label>
+                        <div class="invalid-feedback">
+                            Nombre de usuario no valido.
+                        </div>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput">
+                        <input type="email" class="form-control" id="floatingInput" formControlName="email" [ngClass]="{'is-invalid': f.email.errors && isSent}">
                         <label for="floatingInput">Email</label>
+                        <div class="invalid-feedback">
+                            No vale lo que pones
+                        </div>
                     </div>
                     <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword">
+                        <input type="password" class="form-control" id="floatingPassword" formControlName="pass" [ngClass]="{'is-invalid': f.pass.errors && isSent}">
                         <label for="floatingPassword">Contraseña</label>
+                        <div class="invalid-feedback">
+                            No vale lo que pones
+                        </div>
                     </div>
-                    <button type="button" class="btn mt-4 btn-primary">Registrarme</button>
-                </div>
+                    <button type="submit" class="btn mt-4 btn-primary">Registrarme</button>
+                </form>
             </div>
             <div class="row mt-4 justify-content-center">
                 <div class="col-4 d-grid">
