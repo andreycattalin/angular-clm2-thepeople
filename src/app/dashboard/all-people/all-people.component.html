@@ -1,3 +1,55 @@
-<p>
-  all-people works!
-</p>
+<div class="container">
+    <div class="row">
+
+        <div class="col-12 mt-4 mb-4">
+            <button (click)="newPerson()" type="button" class="btn btn-primary">Añadir nuevo</button>
+        </div>
+
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Profesión</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of allPeople; let pos = index">
+                        <th scope="row">{{pos + 1}}</th>
+                        <td>{{item.name}}</td>
+                        <td>{{item.job}}</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn btn-outline-primary" (click)="editPerson(item.id)">Editar</button>
+                                <button type="button" class="btn btn-outline-primary" (click)="delete(item)" data-bs-toggle="modal" data-bs-target="#exampleModal">Borrar</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro de eliminar esta persona?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Vas a eliminar a {{ personToDelete?.name }}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger">Sí, eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -17,9 +17,11 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AllPeopleComponent } from './dashboard/all-people/all-people.component';
+import { DetailPeopleComponent } from './dashboard/detail-people/detail-people.component';
 
 @NgModule({
-  declarations: [			
+  declarations: [
     AppComponent,
       MenuComponent,
       FooterComponent,
@@ -30,7 +32,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
       UploadNewComponent,
       LoginComponent,
       RegisterComponent,
-      DashboardComponent
+      DashboardComponent,
+      AllPeopleComponent,
+      DetailPeopleComponent
    ],
   imports: [
     BrowserModule,

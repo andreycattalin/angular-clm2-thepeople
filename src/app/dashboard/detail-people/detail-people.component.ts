@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detail-people',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailPeopleComponent implements OnInit {
 
-  constructor() { }
+  isEditMode = false
+
+  constructor( private active: ActivatedRoute) { }
 
   ngOnInit() {
+
+    this.active.params.subscribe( params => {
+      if(params.id) {
+        this.isEditMode = true
+      } else {
+        this.isEditMode = false
+      }
+    })
+
   }
 
 }

@@ -22,6 +22,7 @@ const routes: Routes = [
     { path: "", redirectTo: "all", pathMatch: "full" },
     { path: "all", component: AllPeopleComponent },
     { path: "detail/:id", component: DetailPeopleComponent },
+    { path: "new", component: DetailPeopleComponent },
   ]},
   { path: "404", component: NotFoundComponent },
   { path: "**", redirectTo: "/404" },

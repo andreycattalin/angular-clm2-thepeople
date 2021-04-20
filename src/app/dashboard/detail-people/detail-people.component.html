@@ -1,3 +1,10 @@
-<p>
-  detail-people works!
-</p>
+<div class="container">
+    <div class="row">
+
+        <div class="col-12 mt-4">
+            <h3 *ngIf="isEditMode">Editar persona</h3>
+            <h3 *ngIf="!isEditMode">Añadir nueva persona</h3>
+        </div>
+
+    </div>
+</div>
