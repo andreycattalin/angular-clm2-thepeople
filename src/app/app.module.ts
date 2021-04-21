@@ -20,6 +20,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AllPeopleComponent } from './dashboard/all-people/all-people.component';
 import { DetailPeopleComponent } from './dashboard/detail-people/detail-people.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NotifierModule } from 'angular-notifier';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatNativeDateModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NotifierModule.withConfig({
+      // Custom options in here
+    }),
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'es-ES'},

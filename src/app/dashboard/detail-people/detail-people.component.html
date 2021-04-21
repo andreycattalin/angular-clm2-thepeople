@@ -4,7 +4,38 @@
         <div class="col-12 mt-4">
             <h3 *ngIf="isEditMode">Editar persona</h3>
             <h3 *ngIf="!isEditMode">Añadir nueva persona</h3>
+
+            <button *ngIf="isEditMode" type="button" (click)="editar()" class="btn btn-primary mb-3">Llamar api y cargar datos</button>
+
+            <form [formGroup]="mForm" (ngSubmit)="onSave()">
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Nombre y apellido *</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="name">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Profesión *</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="job">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">URL de la foto *</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="photo">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Fecha de nacimiento *</label>
+                    <input type="date" class="form-control" id="exampleFormControlInput1" formControlName="date">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Biografía *</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="bio"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-3">Guardar</button>
+
+            </form>
         </div>
 
     </div>
 </div>
+
+<notifier-container></notifier-container>
